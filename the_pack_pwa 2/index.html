@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <title>The Pack</title>
+  <link rel="manifest" href="manifest.json" />
+
+  <style>
+    :root {
+      --paper: #f3f3f1;
+      --ink: #111111;
+      --soft: #d8d8d4;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.9), rgba(243,243,241,0.95)),
+        linear-gradient(135deg, #eeeeea 0%, #ffffff 50%, #e9e9e6 100%);
+      color: var(--ink);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.16;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0px, rgba(0,0,0,0.025) 1px, transparent 1px, transparent 4px);
+      mix-blend-mode: multiply;
+    }
+
+    .app {
+      max-width: 430px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 22px 22px 34px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 18px 0 18px;
+    }
+
+    .wolf-logo {
+      width: 235px;
+      max-width: 82%;
+      display: block;
+      margin: 0 auto 6px;
+      mix-blend-mode: multiply;
+      filter: contrast(1.08);
+    }
+
+    .the {
+      font-size: 20px;
+      letter-spacing: 14px;
+      font-weight: 900;
+      margin-left: 14px;
+      line-height: 1;
+    }
+
+    h1 {
+      margin: 2px 0 0;
+      font-size: 64px;
+      line-height: 0.9;
+      letter-spacing: 2px;
+      font-weight: 950;
+      text-transform: uppercase;
+      transform: scaleX(1.05);
+      text-shadow: 1px 0 0 var(--ink);
+    }
+
+    .distressed {
+      color: var(--ink);
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.95) 0 1px, transparent 1px),
+        linear-gradient(var(--ink), var(--ink));
+      background-size: 9px 9px, 100% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .tagline {
+      margin: 12px auto 0;
+      font-size: 12px;
+      letter-spacing: 1.6px;
+      line-height: 1.6;
+      font-weight: 800;
+      text-transform: uppercase;
+      max-width: 330px;
+    }
+
+    .scratch {
+      font-size: 28px;
+      letter-spacing: 5px;
+      margin-top: 8px;
+      font-weight: 900;
+      transform: skewX(-15deg);
+    }
+
+    .section-title {
+      margin: 26px 0 14px;
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border-top: 3px solid var(--ink);
+      border-bottom: 3px solid var(--ink);
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.78);
+      border: 2px solid var(--ink);
+      padding: 17px;
+      margin-bottom: 16px;
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      font-weight: 950;
+    }
+
+    .details {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 13px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 950;
+    }
+
+    .join {
+      border: 0;
+      background: var(--ink);
+      color: white;
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      min-width: 132px;
+    }
+
+    .join:active {
+      transform: translateY(1px);
+    }
+
+    .notice {
+      text-align: center;
+      margin-top: 22px;
+      padding: 14px;
+      border: 1px solid var(--ink);
+      font-size: 12px;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <section class="hero">
+      <img class="wolf-logo" src="assets/wolf-logo.jpg" alt="The Pack wolf logo" />
+      <div class="the">THE</div>
+      <h1 class="distressed">PACK</h1>
+      <p class="tagline">Train Together. Grow Together. Be Unstoppable.</p>
+      <div class="scratch">///</div>
+    </section>
+
+    <h2 class="section-title">Upcoming Workouts</h2>
+
+    <section class="card">
+      <h2>Jumeirah Beach Workout</h2>
+      <div class="details">
+        📍 Jumeirah Beach<br />
+        🕒 Saturday, 8:00 AM<br />
+        ⏱ 1 Hour Outdoor Session
+      </div>
+      <div class="price-row">
+        <div class="price">50 AED</div>
+        <button class="join" onclick="joinSession('Jumeirah Beach Workout')">Join</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Indoor Music Workout</h2>
+      <div class="details">
+        📍 Indoor Studio<br />
+        🕒 Friday, 6:00 PM<br />
+        ⏱ 2 Hour Music-Based Session
+      </div>
+      <div class="price-row">
+        <div class="price">70 AED</div>
+        <button class="join" onclick="joinSession('Indoor Music Workout')">Join</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Kite Beach Conditioning</h2>
+      <div class="details">
+        📍 Kite Beach<br />
+        🕒 Wednesday, 7:00 PM<br />
+        ⏱ Strength + Cardio
+      </div>
+      <div class="price-row">
+        <div class="price">50 AED</div>
+        <button class="join" onclick="joinSession('Kite Beach Conditioning')">Join</button>
+      </div>
+    </section>
+
+    <div class="notice">
+      Flexible fitness. No membership required. Stay connected to the pack.
+    </div>
+
+    <div class="footer">
+      The Pack · Progressive Web App Prototype
+    </div>
+  </main>
+
+  <script>
+    function joinSession(sessionName) {
+      alert("Booking request started for: " + sessionName + "\n\nIn a real version, this would open WhatsApp or a payment link.");
+    }
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js");
+      });
+    }
+  </script>
+</body>
+</html>
